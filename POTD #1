@@ -1,0 +1,16 @@
+TASK 1:String score
+int scoreOfString(string s) {
+        int res=0;
+        for(int i=1;i<s.length();i++)
+        {
+            res=res+abs(s.at(i)-s.at(i-1));
+        }
+        return res;
+    }
+
+TASK 2:GCD of two numbers
+   int gcd(int a, int b) {
+       if (a == 0)
+        return b;
+    return gcd(b % a, a);
+    }
