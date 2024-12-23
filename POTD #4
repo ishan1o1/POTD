@@ -1,0 +1,49 @@
+Task 1: Dutch Flag Algorithm
+ void sortColors(vector<int>& nums) {
+        vector<int> sorted;
+        for(int i=0;i<3;i++)
+        {
+            for(int j=0;j<nums.size();j++){
+                if(nums.at(j)==i)
+                sorted.emplace_back(i);
+            }
+        }
+        nums=sorted;
+        
+    }
+
+Task 2: Check Pangram
+#include <iostream>
+#include <vector>
+#include <cctype>
+#include <string>
+using namespace std;
+ 
+int main() {
+    int n;
+    string s;
+    int count = 0;
+    cin>>n;
+    cin>>s;
+ 
+    if (n < 26) {
+        cout << "NO";
+        return 0;
+    }
+    vector<char> comp;
+    for (int i = 97; i < 123; i++) {
+        comp.emplace_back(i);
+    }
+    for (int i = 0; i < n; i++) {
+        char com = tolower(s.at(i));
+        for (int j = 0; j < 26; j++) {
+            if (comp.at(j) == com) {
+                comp.at(j) = '0';
+                count++;
+            }
+        }
+    }
+    if (count == 26) cout << "YES";
+    else cout << "NO";
+    return 0;
+}
