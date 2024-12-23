@@ -1,0 +1,27 @@
+1.How Many Numbers Are Smaller Than the Current Number
+ vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
+        vector<int> ans;
+        int count;
+        for(int i=0;i<nums.size();i++){
+            count=0;
+            for(int j=0;j<nums.size();j++){
+                if(nums.at(i)>nums.at(j))
+                    count++;
+            }
+              ans.emplace_back(count);
+        }
+        return ans;
+    }
+2.Minimum Moves to Convert String
+ int minimumMoves(string s) {
+      int move=0;
+        for(int i=0;i<s.size();){
+            if(s.at(i)=='X'){
+                move++;
+                i=i+3;
+            }
+                else i++;
+        }
+        return move;
+        
+    }
