@@ -1,0 +1,31 @@
+Task 1: Number of Laser Beams in a Bank
+    int numberOfBeams(vector<string>& bank) {
+       vector<int> laser;
+      int result=0;
+        for(int i=0;i<bank.size();i++){
+            int c=0;
+            string comp=bank.at(i);
+          c = count(comp.begin(), comp.end(), '1');
+
+            if(c!=0)
+            laser.emplace_back(c);
+        }
+        for(int i=1;i<laser.size();i++){
+            result=result+laser[i]*laser[i-1];
+        }
+        return result;
+    }
+Task 2: Trailing Zeros
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cin >> n;
+    int count = 0;
+    for (int i = 5; n / i >= 1; i *= 5) 
+    {
+        count += n / i;
+    }
+    cout << count;
+    return 0;
+}
